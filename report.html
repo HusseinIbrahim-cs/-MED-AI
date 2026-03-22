@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MED-AI - Report Summary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Desing.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="logo">
+            <i class="fa-solid fa-briefcase-medical"></i> MED-AI
+        </div>
+        
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass" style="color: #9ca3af;"></i>
+            <input type="text" placeholder="Search by patient ID or name...">
+        </div>
+        <div class="user-profile">
+            <i class="fa-solid fa-bell bell"></i>
+            <div class="user-info">
+                <i class="fa-solid fa-user-doctor" style="font-size: 24px;"></i>
+                <span>Dr. Jane Smith</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="app-body">
+        
+        <aside class="sidebar">
+            <ul class="nav-links">
+                <li class="nav-item" onclick="window.location.href='index.html'"><i class="fa-solid fa-microscope"></i> AI Diagnosis</li>
+                <li class="nav-item active" onclick="window.location.href='report.html'"><i class="fa-solid fa-file-medical"></i> Report Summary</li>
+                <li class="nav-item" onclick="window.location.href='records.html'"><i class="fa-solid fa-clipboard-user"></i> Patient Records</li>
+                <li class="nav-item" onclick="window.location.href='chatbot.html'"><i class="fa-solid fa-user-doctor"></i> Clinical Assistant</li>
+            </ul>
+            <ul class="nav-links" style="margin-top: auto;">
+                <li class="nav-item" onclick="window.location.href='settings.html'"><i class="fa-solid fa-gear"></i> Settings & Profile</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="workspace">
+                <div class="header-row">
+                    <h1>Report Summary</h1>
+                    <button class="btn-outline"><i class="fa-solid fa-download"></i> Export PDF</button>
+                </div>
+                
+                <div class="patient-banner card">
+                    <div class="patient-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="patient-details-grid">
+                        <div class="detail-item"><span class="detail-label">Patient Name</span><span class="detail-value">Ahmed Mahmoud</span></div>
+                        <div class="detail-item"><span class="detail-label">Patient ID</span><span class="detail-value">#PT-88492</span></div>
+                        <div class="detail-item"><span class="detail-label">Age</span><span class="detail-value">45 Years</span></div>
+                        <div class="detail-item"><span class="detail-label">Gender</span><span class="detail-value">Male</span></div>
+                        <div class="detail-item"><span class="detail-label">Date of Session</span><span class="detail-value">March 22, 2026</span></div>
+                    </div>
+                </div>
+
+                <div class="summary-grid">
+                    <div class="summary-box card">
+                        <div class="box-header">
+                            <h2><i class="fa-solid fa-microphone-lines"></i> Session Symptoms (AI NLP)</h2>
+                            <span class="status-badge success">Transcribed</span>
+                        </div>
+                        <div class="box-content">
+                            <p class="summary-text" id="nlp-symptoms">
+                                Patient reports a persistent dry cough lasting for over two weeks, accompanied by mild shortness of breath during physical exertion. Patient denies any recent fever, chills, or history of smoking. Occasional sharp chest pain on the lower right side when inhaling deeply.
+                            </p>
+                        </div>
+                        <div class="audio-player">
+                            <i class="fa-solid fa-circle-play play-btn"></i>
+                            <div class="waveform-line"></div>
+                            <span class="time">03:45</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-box card">
+                        <div class="box-header">
+                            <h2><i class="fa-solid fa-laptop-medical"></i> AI Suggested Diagnosis & Notes</h2>
+                            <span class="status-badge success">Generated</span>
+                        </div>
+                        <div class="box-content">
+                            <div class="ai-generated-text" id="nlp-diagnosis">
+                                <p><strong>Primary Impression:</strong> High probability of lower respiratory tract infection, consistent with early-stage Pneumonia or localized Infiltration based on patient symptoms.</p>
+                                <br>
+                                <p><strong>Recommended Actions:</strong> Await formal radiologist review of X-Ray. Consider prescribing broad-spectrum antibiotics and advise patient to monitor oxygen levels. Follow-up in 48 hours.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-insight-box">
+                            <strong><i class="fa-solid fa-microscope"></i> AI Vision Insight:</strong> 
+                            Based on the uploaded X-Ray (#IMG-1092), the vision model detected <strong>Infiltration (88% confidence)</strong>. 
+                        </div>
+                        
+                        <div style="display: flex; gap: 12px; margin-top: 20px;">
+                            <button class="btn-outline" style="flex: 1;"><i class="fa-solid fa-pen"></i> Edit AI Notes</button>
+                            <button class="btn-primary" style="flex: 2;"><i class="fa-solid fa-check-double"></i> Approve & Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MED-AI Diagnosis Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Desing.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="logo">
+            <i class="fa-solid fa-briefcase-medical"></i> MED-AI
+        </div>
+        
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass" style="color: #9ca3af;"></i>
+            <input type="text" placeholder="Search by patient ID or name...">
+        </div>
+        <div class="user-profile">
+            <i class="fa-solid fa-bell bell"></i>
+            <div class="user-info">
+                <i class="fa-solid fa-user-doctor" style="font-size: 24px;"></i>
+                <span>Dr. Jane Smith</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="app-body">
+        
+        <aside class="sidebar">
+            <ul class="nav-links">
+                <li class="nav-item active" onclick="window.location.href='index.html'"><i class="fa-solid fa-microscope"></i> AI Diagnosis</li>
+                <li class="nav-item" onclick="window.location.href='report.html'"><i class="fa-solid fa-file-medical"></i> Report Summary</li>
+                <li class="nav-item" onclick="window.location.href='records.html'"><i class="fa-solid fa-clipboard-user"></i> Patient Records</li>
+                <li class="nav-item" onclick="window.location.href='chatbot.html'"><i class="fa-solid fa-user-doctor"></i> Clinical Assistant</li>
+            </ul>
+            <ul class="nav-links" style="margin-top: auto;">
+                <li class="nav-item" onclick="window.location.href='settings.html'"><i class="fa-solid fa-gear"></i> Settings & Profile</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="workspace">
+                <div class="header-row">
+                    <h1>AI Diagnosis</h1>
+                </div>
+                
+                <div class="patient-banner card">
+                    <div class="patient-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="patient-details-grid">
+                        <div class="detail-item"><span class="detail-label">Patient Name</span><span class="detail-value">Ahmed Mahmoud</span></div>
+                        <div class="detail-item"><span class="detail-label">Patient ID</span><span class="detail-value">#PT-88492</span></div>
+                        <div class="detail-item"><span class="detail-label">Age</span><span class="detail-value">45 Years</span></div>
+                        <div class="detail-item"><span class="detail-label">Gender</span><span class="detail-value">Male</span></div>
+                        <div class="detail-item"><span class="detail-label">Date of Session</span><span class="detail-value">March 22, 2026</span></div>
+                    </div>
+                </div>
+                
+                <div class="grid-container">
+                    <div>
+                        <input type="file" id="file-input" accept="image/*">
+                        <div class="upload-section" id="drop-zone">
+                            <i class="fa-regular fa-image upload-icon"></i>
+                            <span class="upload-text">Drag & Drop</span>
+                            <span class="upload-subtext">X-Ray / CT / MRI Image</span>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="autofill" checked>
+                            <label for="autofill">Auto-fill patient details from HIS</label>
+                        </div>
+                    </div>
+
+                    <div class="result-section">
+                        <div class="xray-display">
+                            <span class="placeholder-text" id="placeholder">Image will appear here</span>
+                            <img id="preview-image" src="" alt="X-Ray Analysis">
+                        </div>
+                        
+                        <div class="diagnosis-title">Diagnosis</div>
+                        <div class="diagnosis-result" id="diagnosis-text">Awaiting scan...</div>
+                        
+                        <div class="controls-row">
+                            <div class="severity-badge" id="severity-badge" style="display: none;">High</div>
+                            <input type="text" class="empty-input" disabled>
+                        </div>
+                        
+                        <button class="btn-primary" id="generate-btn" disabled>Generate Report</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

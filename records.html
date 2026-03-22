@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MED-AI - Patient Records & History</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Desing.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="logo">
+            <i class="fa-solid fa-briefcase-medical"></i> MED-AI
+        </div>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass" style="color: #9ca3af;"></i>
+            <input type="text" placeholder="Search by patient ID or name...">
+        </div>
+        <div class="user-profile">
+            <div style="position: relative;">
+                <i class="fa-solid fa-bell bell"></i>
+                <span style="position: absolute; top: -2px; right: -2px; background: red; width: 10px; height: 10px; border-radius: 50%;"></span>
+            </div>
+            <div class="user-info">
+                <i class="fa-solid fa-user-doctor" style="font-size: 24px;"></i>
+                <span>Dr. Jane Smith</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="app-body">
+        
+        <aside class="sidebar">
+            <ul class="nav-links">
+                <li class="nav-item" onclick="window.location.href='index.html'"><i class="fa-solid fa-microscope"></i> AI Diagnosis</li>
+                <li class="nav-item" onclick="window.location.href='report.html'"><i class="fa-solid fa-file-medical"></i> Report Summary</li>
+                <li class="nav-item active" onclick="window.location.href='records.html'"><i class="fa-solid fa-clipboard-user"></i> Patient Records</li>
+                <li class="nav-item" onclick="window.location.href='chatbot.html'"><i class="fa-solid fa-user-doctor"></i> Clinical Assistant</li>
+            </ul>
+            <ul class="nav-links" style="margin-top: auto;">
+                <li class="nav-item" onclick="window.location.href='settings.html'"><i class="fa-solid fa-gear"></i> Settings & Profile</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="workspace">
+                <div class="header-row">
+                    <h1>Patient Clinical History</h1>
+                    <button class="btn-primary" style="width: auto;"><i class="fa-solid fa-plus"></i> New Session</button>
+                </div>
+                
+                <div class="patient-banner card">
+                    <div class="patient-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="patient-details-grid">
+                        <div class="detail-item"><span class="detail-label">Patient Name</span><span class="detail-value">Ahmed Mahmoud</span></div>
+                        <div class="detail-item"><span class="detail-label">Patient ID</span><span class="detail-value">#PT-88492</span></div>
+                        <div class="detail-item"><span class="detail-label">Age</span><span class="detail-value">45 Years</span></div>
+                        <div class="detail-item"><span class="detail-label">Gender</span><span class="detail-value">Male</span></div>
+                        <div class="detail-item"><span class="detail-label">Primary Concern</span><span class="detail-value">Respiratory</span></div>
+                    </div>
+                </div>
+
+                <div class="records-top-grid">
+                    <div class="card reminder-card">
+                        <div class="box-header" style="margin-bottom: 10px; border: none; padding: 0;">
+                            <h2><i class="fa-regular fa-calendar-check"></i> Next Scheduled Session</h2>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px;">Push notifications and schedule sync enabled.</p>
+                        <div class="date-display">
+                            <div class="calendar-icon">
+                                <span class="month">MAR</span>
+                                <span class="day">25</span>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 18px; margin-bottom: 4px;">Follow-up Examination</h3>
+                                <p style="color: var(--text-muted); font-size: 14px;"><i class="fa-regular fa-clock"></i> 10:30 AM - Room 4B</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card status-card">
+                        <div class="box-header" style="margin-bottom: 10px; border: none; padding: 0;">
+                            <h2><i class="fa-solid fa-chart-line"></i> Overall Treatment Progress</h2>
+                            <span class="status-badge improving">Showing Improvement</span>
+                        </div>
+                        <p style="color: var(--text-main); font-size: 15px; margin-top: 10px;">
+                            Patient is responding positively to broad-spectrum antibiotics. X-Ray opacity is reducing. Cough frequency decreased by approx 40% since initial visit.
+                        </p>
+                    </div>
+                </div>
+
+                <h2 style="margin: 30px 0 20px 0; font-size: 20px;">Past Sessions & AI Analyses</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">March 22, 2026</div>
+                        <div class="timeline-content card">
+                            <div class="timeline-header">
+                                <h3>Follow-up Session</h3>
+                                <span class="status-badge improving">Improving</span>
+                            </div>
+                            <div class="timeline-grid">
+                                <div>
+                                    <strong><i class="fa-solid fa-microphone-lines"></i> NLP Discussion Summary:</strong>
+                                    <p class="timeline-text">Patient reports chest pain has subsided. Cough is still present but less severe. No fever recorded.</p>
+                                </div>
+                                <div>
+                                    <strong><i class="fa-solid fa-microscope"></i> AI Vision Delta:</strong>
+                                    <p class="timeline-text">Follow-up X-Ray (#IMG-1104) shows Infiltration confidence dropped from 88% to 62%. Clear signs of clearing in the lower right lobe.</p>
+                                </div>
+                            </div>
+                            <button class="btn-outline" style="margin-top: 15px; font-size: 14px; padding: 6px 12px;">View Full Report</button>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">March 15, 2026</div>
+                        <div class="timeline-content card">
+                            <div class="timeline-header">
+                                <h3>Initial Consultation</h3>
+                                <span class="status-badge baseline">Baseline Established</span>
+                            </div>
+                            <div class="timeline-grid">
+                                <div>
+                                    <strong><i class="fa-solid fa-microphone-lines"></i> NLP Discussion Summary:</strong>
+                                    <p class="timeline-text">Patient presented with persistent dry cough for two weeks and sharp chest pain on the right side.</p>
+                                </div>
+                                <div>
+                                    <strong><i class="fa-solid fa-microscope"></i> AI Vision Delta:</strong>
+                                    <p class="timeline-text">Initial X-Ray (#IMG-1092) detected Infiltration (88% confidence) and possible early-stage Pneumonia.</p>
+                                </div>
+                            </div>
+                            <button class="btn-outline" style="margin-top: 15px; font-size: 14px; padding: 6px 12px;">View Full Report</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    
+</body>
+</html>

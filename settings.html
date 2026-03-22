@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MED-AI - Settings & Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Desing.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="logo">
+            <i class="fa-solid fa-briefcase-medical"></i> MED-AI
+        </div>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass" style="color: #9ca3af;"></i>
+            <input type="text" placeholder="Search by patient ID or name...">
+        </div>
+        <div class="user-profile">
+            <i class="fa-solid fa-bell bell"></i>
+            <div class="user-info">
+                <i class="fa-solid fa-user-doctor" style="font-size: 24px;"></i>
+                <span>Dr. Jane Smith</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="app-body">
+        
+        <aside class="sidebar">
+            <ul class="nav-links">
+                <li class="nav-item" onclick="window.location.href='index.html'"><i class="fa-solid fa-microscope"></i> AI Diagnosis</li>
+                <li class="nav-item" onclick="window.location.href='report.html'"><i class="fa-solid fa-file-medical"></i> Report Summary</li>
+                <li class="nav-item" onclick="window.location.href='records.html'"><i class="fa-solid fa-clipboard-user"></i> Patient Records</li>
+                <li class="nav-item" onclick="window.location.href='chatbot.html'"><i class="fa-solid fa-user-doctor"></i> Clinical Assistant</li>
+            </ul>
+
+            <ul class="nav-links" style="margin-top: auto;">
+                <li class="nav-item" onclick="window.location.href='settings.html'"><i class="fa-solid fa-gear"></i> Settings & Profile</li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="workspace">
+                <div class="header-row">
+                    <h1>Settings & Profile</h1>
+                    <button class="btn-primary" style="width: auto; padding: 10px 24px;"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+                </div>
+
+                <div class="settings-grid">
+                    
+                    <div class="settings-column">
+                        
+                        <div class="card settings-card">
+                            <div class="box-header">
+                                <h2><i class="fa-regular fa-id-card"></i> Doctor Profile</h2>
+                            </div>
+                            <div class="profile-header">
+                                <div class="profile-avatar-large"><i class="fa-solid fa-user-doctor"></i></div>
+                                <div>
+                                    <button class="btn-outline" style="padding: 6px 12px; font-size: 13px;">Upload Photo</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" class="settings-input" value="Dr. Jane Smith">
+                            </div>
+                            <div class="form-group">
+                                <label>Specialization</label>
+                                <input type="text" class="settings-input" value="Pulmonologist">
+                            </div>
+                            <div class="form-group">
+                                <label>Medical License Number</label>
+                                <input type="text" class="settings-input" value="MED-8849201-XYZ">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" class="settings-input" value="jane.smith@medai-hospital.com">
+                            </div>
+                        </div>
+
+                        <div class="card settings-card">
+                            <div class="box-header">
+                                <h2><i class="fa-solid fa-desktop"></i> System Preferences</h2>
+                            </div>
+                            <div class="form-group">
+                                <label>Interface Language</label>
+                                <select class="settings-input">
+                                    <option>English</option>
+                                    <option>Arabic (العربية)</option>
+                                </select>
+                            </div>
+                            <div class="toggle-group">
+                                <div>
+                                    <label style="font-weight: 600; color: var(--text-main); display: block;">Dark Mode</label>
+                                    <span style="font-size: 13px; color: var(--text-muted);">Enable high-contrast dark theme.</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-column">
+                        
+                        <div class="card settings-card" style="border-left: 4px solid var(--primary-blue);">
+                            <div class="box-header">
+                                <h2><i class="fa-solid fa-microchip"></i> AI Model Configuration</h2>
+                            </div>
+                            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+                                Select the active machine learning models for diagnosis and NLP summarization.
+                            </p>
+                            
+                            <div class="form-group">
+                                <label>Active Vision Model (Chest X-Rays)</label>
+                                <select class="settings-input">
+                                    <option selected>DenseNet121 Ensemble (Recommended)</option>
+                                    <option>EfficientNet-B1 (Fast Inference)</option>
+                                    <option>Hybrid Transformer (Experimental)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>NLP Summary Detail Level</label>
+                                <select class="settings-input">
+                                    <option>Concise (Bullet points only)</option>
+                                    <option selected>Standard (Clinical Narrative)</option>
+                                    <option>Comprehensive (Full Transcription + Analysis)</option>
+                                </select>
+                            </div>
+
+                            <div class="toggle-group">
+                                <div>
+                                    <label style="font-weight: 600; color: var(--text-main); display: block;">Auto-Generate Diagnosis</label>
+                                    <span style="font-size: 13px; color: var(--text-muted);">Let NLP model draft final notes before review.</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="card settings-card">
+                            <div class="box-header">
+                                <h2><i class="fa-solid fa-key"></i> API Integrations</h2>
+                            </div>
+                            <div class="form-group">
+                                <label>LLM Provider (Clinical Assistant)</label>
+                                <select class="settings-input">
+                                    <option selected>Google Gemini Pro 1.5</option>
+                                    <option>OpenAI GPT-4o</option>
+                                    <option>Local Llama 3 (Offline)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>API Key</label>
+                                <input type="password" class="settings-input" value="********************************">
+                                <span style="font-size: 12px; color: var(--text-muted); margin-top: 4px; display: inline-block;">Your key is encrypted and stored locally.</span>
+                            </div>
+                            <button class="btn-outline" style="width: 100%; margin-top: 10px;">Test API Connection</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

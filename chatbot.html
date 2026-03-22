@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MED-AI Clinical Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Desing.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="logo">
+            <i class="fa-solid fa-briefcase-medical"></i> MED-AI
+        </div>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass" style="color: #9ca3af;"></i>
+            <input type="text" placeholder="Search by patient ID or name...">
+        </div>
+        <div class="user-profile">
+            <i class="fa-solid fa-bell bell"></i>
+            <div class="user-info">
+                <i class="fa-solid fa-user-doctor" style="font-size: 24px;"></i>
+                <span>Dr. Jane Smith</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="app-body">
+        
+        <aside class="sidebar">
+            <ul class="nav-links">
+                <li class="nav-item" onclick="window.location.href='index.html'"><i class="fa-solid fa-microscope"></i> AI Diagnosis</li>
+                <li class="nav-item" onclick="window.location.href='report.html'"><i class="fa-solid fa-file-medical"></i> Report Summary</li>
+                <li class="nav-item" onclick="window.location.href='records.html'"><i class="fa-solid fa-clipboard-user"></i> Patient Records</li>
+                <li class="nav-item active" onclick="window.location.href='chatbot.html'"><i class="fa-solid fa-user-doctor"></i> Clinical Assistant</li>
+            </ul>
+            <ul class="nav-links" style="margin-top: auto;">
+                <li class="nav-item" onclick="window.location.href='settings.html'"><i class="fa-solid fa-gear"></i> Settings & Profile</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="workspace chat-workspace">
+                <div class="header-row">
+                    <h1>Clinical Assistant</h1>
+                    <span class="status-badge success"><i class="fa-solid fa-link"></i> Patient Context Linked</span>
+                </div>
+                
+                <div class="patient-banner card" style="padding: 12px 24px; margin-bottom: 20px;">
+                    <div class="patient-details-grid" style="grid-template-columns: auto 1fr auto; align-items: center;">
+                        <div class="patient-avatar" style="width: 40px; height: 40px; font-size: 16px;">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <span class="detail-value" style="font-size: 14px;">Ahmed Mahmoud (#PT-88492)</span>
+                            <span class="detail-label" style="display: block; font-size: 11px;">45 Yrs | Male | Symptom: Dry Cough, Chest Pain</span>
+                        </div>
+                        <button class="btn-outline" style="padding: 6px 12px; font-size: 12px;"><i class="fa-solid fa-unlink"></i> Unlink Patient</button>
+                    </div>
+                </div>
+
+                <div class="chat-container card">
+                    
+                    <div class="chat-history">
+                        <div class="chat-message ai-message">
+                            <div class="message-avatar"><i class="fa-solid fa-robot"></i></div>
+                            <div class="message-content">
+                                <p>Hello Dr. Smith. I am linked to the records for <strong>Ahmed Mahmoud</strong>.</p>
+                                <p>I have reviewed his recent NLP symptom transcript and the AI Vision insight indicating <strong>Infiltration (88%)</strong>.</p>
+                                <p>How can I assist you with this case today?</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-message user-message">
+                            <div class="message-content">
+                                <p>What are the most common differential diagnoses for a 45-year-old male presenting with these specific symptoms and an infiltration on the right lung base?</p>
+                            </div>
+                            <div class="message-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+                        </div>
+
+                        <div class="chat-message ai-message">
+                            <div class="message-avatar"><i class="fa-solid fa-robot"></i></div>
+                            <div class="message-content">
+                                <p>Based on the patient's age, dry cough, right-sided pleuritic chest pain, and the focal infiltration detected on the X-ray, the primary differentials include:</p>
+                                <ul style="margin-left: 20px; margin-top: 10px; margin-bottom: 10px;">
+                                    <li><strong>Community-Acquired Pneumonia (CAP):</strong> Most likely given the localized infiltration and pleuritic pain.</li>
+                                    <li><strong>Pulmonary Embolism:</strong> Should be ruled out if D-dimer is elevated, though lack of acute tachycardia makes it secondary.</li>
+                                    <li><strong>Atypical Infection:</strong> E.g., Mycoplasma, considering the dry nature of the cough.</li>
+                                </ul>
+                                <p><em>Would you like me to draft a prescription for broad-spectrum antibiotics (e.g., Amoxicillin/Clavulanate) or generate a lab order for a CBC and CRP?</em></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-suggestions">
+                        <button class="suggestion-chip"><i class="fa-solid fa-pills"></i> Check Drug Interactions</button>
+                        <button class="suggestion-chip"><i class="fa-solid fa-file-prescription"></i> Draft Antibiotic Rx</button>
+                        <button class="suggestion-chip"><i class="fa-solid fa-envelope"></i> Write Referral Letter</button>
+                        <button class="suggestion-chip"><i class="fa-solid fa-book-medical"></i> Review Treatment Guidelines</button>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <button class="attach-btn"><i class="fa-solid fa-paperclip"></i></button>
+                        <textarea placeholder="Ask the clinical assistant or type a command..."></textarea>
+                        <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                    
+                    <div class="disclaimer">
+                        <i class="fa-solid fa-triangle-exclamation"></i> MED-AI Assistant is designed to support, not replace, clinical judgment. Always verify dosages and guidelines.
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>
